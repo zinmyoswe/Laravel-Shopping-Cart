@@ -59,7 +59,19 @@ cart page
 	<a href="{{route('shop.show', $item->model->slug)}}">{{$item->model->name}}</a>
 	<p>{{$item->model->details}}</p>
 	<p>$ {{$item->model->price}}</p>
-	<a href="Remove">Remove</a> | <a href="">Move To Cart</a>
+
+		<form action="{{route('saveforlater.destroy',$item->rowId)}}" method="POST">
+			 		{{csrf_field()}}
+			 		{{method_field('DELETE')}}
+			 		<button type="submit" class="btn btn-outline-danger">Remove</button>
+			 	</form>
+			 </p>
+			 	 <p>
+			 	<form action="{{route('saveforlater.switchtocart',$item->rowId)}}" method="POST">
+			 		{{csrf_field()}}
+			 		
+			 		<button type="submit" class="btn btn-outline-primary">Move To cart</button>
+			 	</form>
 @endforeach
 @else
 

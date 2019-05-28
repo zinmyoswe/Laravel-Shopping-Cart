@@ -20,6 +20,9 @@ Route::post('/cart','CartController@store')->name('cart.store');
 Route::delete('/cart/{product}','CartController@destroy')->name('cart.destroy');
 Route::post('/cart/switchsaveforlater/{product}','CartController@switchsaveforlater')->name('cart.switchsaveforlater');
 
+Route::delete('/saveforlater/{product}','SaveforlaterController@destroy')->name('saveforlater.destroy');
+Route::post('/saveforlater/switchtocart/{product}','SaveforlaterController@switchtocart')->name('saveforlater.switchtocart');
+
 Route::get('empty',function(){
 	Cart::instance('saveforlater')->destroy();
 });

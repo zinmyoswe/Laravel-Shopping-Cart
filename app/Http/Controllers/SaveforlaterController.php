@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use Illuminate\Http\Request;
-use DB;
+use App\Product;
 use Cart;
 
-class CartController extends Controller
+class SaveforlaterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('cart');
+        //
     }
 
     /**
@@ -37,22 +36,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $duplicates = Cart::search(function($cartItem, $rowId) use ($request){
-            return $cartItem->id === $request->id;
-        });
-
-        if($duplicates->isNotEmpty()){
-            return redirect()->route('cart.index')->with('success_message','Item is already in your cart');
-        }
-
-        Cart::add($request->id, $request->name, 1, $request->price)->associate('App\Product');
-
-        return redirect()->route('cart.index')->with('success message','Item was added to your cart');
-    }
-
-    public function empty()
-    {
-        Cart::destroy();
+        //
     }
 
     /**
@@ -97,33 +81,32 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
-
-        return redirect()->route('cart.index')->with('success_message','Item has been removed!');
+        Cart::instance('saveforlater')->remove($id);
+        return back()->with('success_message','Item has been removed');
     }
 
-       /**
+      /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function switchsaveforlater($id)
+    public function switchtocart($id)
     {
-        $item = Cart::get($id);
+        $item = Cart::instance('saveforlater')->get($id);
 
-        Cart::remove($id);
+        Cart::instance('saveforlater')->remove($id);
 
-        $duplicates = Cart::instance('saveforlater')->search(function($cartItem, $rowId) use ($id){
+        $duplicates = Cart::instance('default')->search(function($cartItem, $rowId) use ($id){
             return $rowId === $id;
         });
 
         if($duplicates->isNotEmpty()){
-            return redirect()->route('cart.index')->with('success_message','Item is already saved for later');
+            return redirect()->route('cart.index')->with('success_message','Item is already in your cart');
         }
 
-        Cart::instance('saveforlater')->add($item->id, $item->name, 1, $item->price)->associate('App\Product');
+        Cart::instance('default')->add($item->id, $item->name, 1, $item->price)->associate('App\Product');
 
-        return redirect()->route('cart.index')->with('success message','Item has been saved for later');
+        return redirect()->route('cart.index')->with('success message','Item has been moved to cart');
     }
 }
