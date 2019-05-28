@@ -1,12 +1,486 @@
 @extends('layouts.master')
 
 @section('content')
-home page
-<ul>
-@foreach($products as $product)
-	<li><a href="">{{$product->name}}<br>
-	${{$product->price}}</a></li>
-@endforeach
-</ul>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    display: block;
+}
+.carousel-item {
+    height: 32rem;
+}
+.carousel-item {
+    position: relative;
+    display: none;
+    float: left;
+    width: 100%;
+    height: 600px;
+    margin-right: -100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: -webkit-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+    transition: transform .6s ease-in-out,-webkit-transform .6s ease-in-out;
+}
+
+/*addias*/
+.color-theme-white___3NDJn h2, .color-theme-white___3NDJn p {
+    color: #fff;
+}
+.title___DZ13z {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.gl-heading--s, h5 {
+    font-size: 18px;
+    line-height: 16px;
+}
+.gl-heading, h1, h2, h3, h4, h5, h6 {
+    letter-
+    spacing: 1.5px;
+}
+h2{
+	font-style: normal;
+    font-weight: 600;
+    font-family: 'Abel', sans-serif;
+}
+h2 a{
+	color: #fff;
+}
+h2 a:hover{
+	color: #fff;
+}
+/*online shop*/
+.add2_text{
+	color: #000;
+}
+.img_feature{
+	margin-right: 100px;
+	margin-bottom: 10px;
+}
+.feature_cat{
+
+	font-size: 24px;
+}
+h5{
+	font-weight: bold;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.home_con{
+	height: 170px;
+	background-color: #000;
+	color: #fff;
+}
+h4{
+	font-weight: bold;
+	font-size: 22px;
+	text-transform: uppercase;
+	font-family: 'adiBlack',Arial,Helvetica,Verdana,sans-serif;
+}
+
+    </style>
+    <!-- Custom styles for this template -->
+   
+
+<main role="main">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+    
+        <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/HP_MH_1920x800-NJ-051019_tcm221-362745.jpg" alt="" width="100%" height="100%" fill="#777">
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>NITE JOGGER FOR ALL</h1>
+            <p>Light up the night in new Nite Jogger colorways. Photo by Cole Younger.</p>
+            <p><a class="btn btn-lg btn-light" href="#" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+      	<img src="https://brand.assets.adidas.com/f_auto,q_auto,fl_lossy/capi/enGB/Images/new-styles-added-hp-masthead-desktop_143-363097.jpg" alt="" width="100%" height="100%" fill="#777">
+      	
+      <div class="carousel-caption text-left">
+            <h1 class="add2_text">NEW STYLES ADDED - 33% OFF</h1>
+            <p class="add2_text">Keep celebrating 70 years of adidas. Enjoy 33% off today and Show Your Stripes!</p>
+            <p><a class="btn btn-lg btn-dark" href="#" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+      </div>
+      <div class="carousel-item">
+      	<img src="https://content.nike.com/content/dam/one-nike/en_lu/SU19/Mens/W_20190516_EMEA_NSW_MLP_P3A_SHOX/W_20190516_EMEA_NSW_MLP_P3A_SHOX_DT_1600x600_visual.jpg.transform/full-screen/W_20190516_EMEA_NSW_MLP_P3A_SHOX_DT_1600x600_visual.jpg" alt="" width="100%" height="100%" fill="#777">
+        
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>KICK UP A STORM IN SHOX</h1>
+            <p>The subversive Nike Shox R4 is making<br>
+waves in clean monochrome colourways.</p>
+            <p><a class="btn btn-lg btn-light" href="#" role="button" style="margin-bottom: 130px">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+<br><br>
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+  {{-- ======================= start of addias ==================== --}}
+	<div class="row">
+		<div class="col-md-6 col-xs-12 col-sm-12">
+			<img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/MOVED_OVER_tcm221-363900.jpg" width="700px" height="500px" style="margin-left: 50px">
+
+			  <div class="container">
+          <div class="carousel-caption">
+            <h2>ULTRABOOST 19</h2>
+            <p>Reboosted</p>
+            <p><a class="btn btn-lg btn-light" href="#" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+        </div>
+
+		</div>
+		<div class="col-md-6 col-xs-12 col-sm-12">
+			<img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/originals-fw19-hoc-drop1-tease-hp-teaser-large-2up-ee5790-m-t_v2_tcm221-364940.jpg" width="700px" height="500px">
+
+			  <div class="container">
+          <div class="carousel-caption"">
+            <h2>HOME OF CLASSICS</h2>
+            
+            <p><a class="btn btn-lg btn-light" href="#" role="button">PREVIEW NOW <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+        </div>
+		</div>
+	</div>
+
+
+	<br><br>
+	{{-- ======================= end of addias ==================== --}}
+
+	{{-- ======================= start of FEATURED CATEGORIES ==================== --}}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="feature_cat">FEATURED CATEGORIES</h2><br>
+				<div class="row">
+					<div class="col-lg-3 col-xs-6 col-sm-6">
+						<img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_pg_m_05?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+						  <div class="container">
+				          <div class="carousel-caption">
+				            <h2 style="margin-bottom: 130px;"><a href="">Casual Shirts</a></h2>
+				            
+				          </div>
+				        </div>
+					</div>
+					<div class="col-lg-3 col-xs-6 col-sm-6">
+						<img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j09_polo?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+						  <div class="container">
+				          <div class="carousel-caption">
+				            <h2 style="margin-bottom: 130px;"><a href="">Polo Shirts</a></h2>
+				            
+				          </div>
+				        </div>
+					</div>
+					<div class="col-lg-3 col-xs-6 col-sm-6">
+						<img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j10_shirt_m?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+						  <div class="container">
+				          <div class="carousel-caption">
+				            <h2 style="margin-bottom: 130px;"><a href="">T-Shirts</a></h2>
+				            
+				          </div>
+				        </div>
+					</div>
+					<div class="col-lg-3 col-xs-6 col-sm-6">
+						<img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j11_Chino?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+						  <div class="container">
+				          <div class="carousel-caption">
+				            <h2 style="margin-bottom: 130px;"><a href="">Pants</a></h2>
+				            
+				          </div>
+				        </div>
+					</div>
+					<div class="col-lg-3 col-xs-6 col-sm-6">
+						<img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j12_ezy?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+						  <div class="container">
+				          <div class="carousel-caption">
+				            <h2 style="margin-bottom: 130px;"><a href="">Jeans</a></h2>
+				            
+				          </div>
+				        </div>
+					</div>
+					<div class="col-lg-3 col-xs-6 col-sm-6">
+						<img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j13_active?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+						  <div class="container">
+				          <div class="carousel-caption">
+				            <h2 style="margin-bottom: 130px;"><a href="">Activewear</a></h2>
+				            
+				          </div>
+				        </div>
+					</div>
+					<div class="col-lg-3 col-xs-6 col-sm-6">
+						<img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j14_shorts_m?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+						  <div class="container">
+				          <div class="carousel-caption">
+				            <h2 style="margin-bottom: 130px;"><a href="">Shorts</a></h2>
+				            
+				          </div>
+				        </div>
+					</div>
+					<div class="col-lg-3 col-xs-6 col-sm-6">
+						<img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_sp_ar_030719_v2_01?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+						  <div class="container">
+				          <div class="carousel-caption">
+				            <h2 style="margin-bottom: 130px;"><a href="">AIRism Innerwear</a></h2>
+				            
+				          </div>
+				        </div>
+					</div>
+				
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	{{-- ======================= end of FEATURED CATEGORIES ==================== --}}
+	{{-- ======================= start of addias 2 ==================== --}}
+	<div class="row">
+		<div class="col-md-6 col-xs-12 col-sm-12">
+			<img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/teaser-c-Adidas_Swim_Amphi-mobile_background_image_tcm143-341615.jpg" width="700px" height="500px" style="margin-left: 50px">
+
+			  <div class="container">
+          <div class="carousel-caption">
+            <h2>MAXIMUM VERSATILITY</h2>
+            <p>Three support levels, for any activity in and around the water.</p>
+            <p><a class="btn btn-lg btn-dark" href="#" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+        </div>
+
+		</div>
+		<div class="col-md-6 col-xs-12 col-sm-12">
+			<img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/HP_Teaser_Tights_Small_tcm143-315446.jpg" width="700px" height="500px">
+
+			  <div class="container">
+          <div class="carousel-caption"">
+            <h2>WORK IT OUTSIDE</h2>
+            <p>Get inspired to bootcamp equipment-free in high support tights.</p>
+            
+            <p><a class="btn btn-lg btn-dark" href="#" role="button">PREVIEW NOW <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+        </div>
+		</div>
+	</div>
+
+
+	<br><br>
+	{{-- ======================= end of addias 2 ==================== --}}
+
+	  
+   {{-- ======================= start of caro ==================== --}}
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+    
+        <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/ptBR/Images/HEADER2-GLP_Nemeziz_Desktop_Masthead-Small_tcm194-347942.jpg" alt="" width="100%" height="100%" fill="#777">
+        <div class="container">
+          <div class="carousel-caption text-left" style="margin-bottom: 140px;">
+            <h1>UNLOCK AGILITY</h1>
+            <p>New Nemeziz 19 is exclusively available through adidas and selected retailers.</p>
+            <p><a class="btn btn-lg btn-dark" href="#" role="button">EXCLUSIVELY HERE <i class="fa fa-arrow-right"></i></a></p>
+             <p><a class="btn btn-lg btn-dark" href="#" role="button">EXPLORE <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  {{-- ======================= end of caro ==================== --}}
+
+
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <h2>Heading</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <div class="container">
+		    	home page
+		<ul>
+		@foreach($products as $product)
+			<li><a href="">{{$product->name}}<br>
+			${{$product->price}}</a></li>
+		@endforeach
+		</ul>
+
+	
+    </div>{{--  container end --}}
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+	<br><br>
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+<div class="home_con"> 
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<br>
+				<h4>Sign Up
+SIGN UP FOR NEWS & GET <b style="color: #92d39f">15% OFF</b></h4>
+				
+			</div>
+			<div class="col-md-6">
+				<br>
+				<input type="email" name="" placeholder="YOUR EMAIL ADDRESS" class="form-control">
+			</div>
+			<br><br><br><br>
+			<p style="font-size: 14px;">By clicking the "Sign up" button, I confirm I am over 13 years of age.
+
+Sign me up for the adidas emails, featuring exclusive offers, latest product info, news about upcoming events and more. Please see our <a href=""> Terms and Conditions</a>  and <a href="">Privacy Policy</a> Privacy Policy for more details. Selected products may be excluded from the 15% promotion.</p>
+		</div>
+	</div>
+</div>
+
+	<!-- FOOTER1 -->
+	<div class="container">
+		<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Cool stuff</a></li>
+          <li><a class="text-muted" href="#">Random feature</a></li>
+          <li><a class="text-muted" href="#">Team feature</a></li>
+          <li><a class="text-muted" href="#">Stuff for developers</a></li>
+          <li><a class="text-muted" href="#">Another one</a></li>
+          <li><a class="text-muted" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Cool stuff</a></li>
+          <li><a class="text-muted" href="#">Random feature</a></li>
+          <li><a class="text-muted" href="#">Team feature</a></li>
+          <li><a class="text-muted" href="#">Stuff for developers</a></li>
+          <li><a class="text-muted" href="#">Another one</a></li>
+          <li><a class="text-muted" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Resource</a></li>
+          <li><a class="text-muted" href="#">Resource name</a></li>
+          <li><a class="text-muted" href="#">Another resource</a></li>
+          <li><a class="text-muted" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Team</a></li>
+          <li><a class="text-muted" href="#">Locations</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+	</div>
+  <!-- FOOTER2 -->
+  <footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2017-2019 ACTIVESHOP, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+
 
 @endsection

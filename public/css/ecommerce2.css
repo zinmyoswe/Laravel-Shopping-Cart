@@ -1,0 +1,54 @@
+html,body{
+	font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Abel', sans-serif;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-outline-dark {
+    color: #000;
+    border-color: #000;
+}
+
+
+/*------------------ Cart page ------------------------*/
+h2{
+	font-style: normal;
+    font-weight: 600;
+    font-family: 'Abel', sans-serif;
+}
+.title_cartpage{
+	font-size: 22px;
+	font-weight: 200;
+}
+
+.img_cartpage{
+	width: 120px;
+}
+.cart_item{
+	padding: 6px;
+}
+.cart_item a{
+	color: #000;
+	font-family: 'Abel', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	margin-right: 40px;
+}
+.cart_p{
+	font-size: 14px;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #fff;
+}
+
+/*------------------ Detail page ------------------------*/
+
+

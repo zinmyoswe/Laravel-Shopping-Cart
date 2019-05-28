@@ -1,6 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="container">
+	<div class="row">
+		<div class="col-lg-9 col-sm-6 col-xs-12">
+			
+		</div> {{-- col-lg-9 col-sm-6 col-xs-12 end --}}
+		<div class="col-lg-3 col-sm-6 col-xs-12"></div> {{-- col-lg-3 col-sm-6 col-xs-12 end --}}
+	</div>
 home/shop/{{$product->slug}}
 <ul>
 
@@ -18,4 +25,5 @@ home/shop/{{$product->slug}}
 </form>
 <br><br>afsad
 @include('might-like');
+</div> {{-- container end --}}
 @endsection
