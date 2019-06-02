@@ -33,7 +33,7 @@ h2{
 .cart_item{
 	padding: 6px;
 }
-.cart_item a{
+.cart_a{
 	color: #000;
 	font-family: 'Abel', sans-serif;
 	font-size: 18px;
@@ -43,12 +43,34 @@ h2{
 .cart_p{
 	font-size: 14px;
 }
-.table td, .table th {
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #fff;
+
+
+/*------------------ Cart Sidebar ------------------------*/
+.cart_sidebar{
+	height: 460px;
+	width: 300px;
+	background-color: #f8f9fa;
+}
+.cart-calculator{
+	margin: 10px;
+	
+	height: 240px;
+	width: 280px;
+	background-color: #fff;
+}
+
+.cart_sidebar2{
+
+	width: 300px;
+	
+}
+.cart-fontstyle{
+	font-weight: bold;
 }
 
 /*------------------ Detail page ------------------------*/
+
+
+/*------------------ Checkout page ------------------------*/
 
 

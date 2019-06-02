@@ -105,9 +105,21 @@ h4{
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
+       <div class="carousel-item active">
+    
+        <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/running-fw19-rfto-educate-hp-lf-mh-medium-d_tcm221-356981.jpg" alt="" width="100%" height="100%" fill="#777">
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1 style="color: #000; font-weight: 600;">RUN FOR THE OCEANS</h1>
+            <p style="color: #000;">It's time to take action against marine plastic pollution. Rally your <br>friends to join the movement.</p>
+            <p><a class="btn btn-lg btn-dark" href="#" role="button" style="margin-bottom: 160px">LEARN MORE <i class="fa fa-arrow-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
     
         <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/HP_MH_1920x800-NJ-051019_tcm221-362745.jpg" alt="" width="100%" height="100%" fill="#777">
         <div class="container">
@@ -376,7 +388,8 @@ waves in clean monochrome colourways.</p>
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
       </div>
     </div>
-
+    
+    @include('best-seller');
     <div class="container">
 		    	home page
 		<ul>

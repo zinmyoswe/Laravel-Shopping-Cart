@@ -12,6 +12,7 @@
 */
 
 Route::get('/','HomeController@index')->name('home');
+
 Route::get('/shop','ShopController@index')->name('shop.index');
 Route::get('/shop/{product}','ShopController@show')->name('shop.show');
 
@@ -22,6 +23,9 @@ Route::post('/cart/switchsaveforlater/{product}','CartController@switchsaveforla
 
 Route::delete('/saveforlater/{product}','SaveforlaterController@destroy')->name('saveforlater.destroy');
 Route::post('/saveforlater/switchtocart/{product}','SaveforlaterController@switchtocart')->name('saveforlater.switchtocart');
+
+Route::get('/checkout','CheckoutController@index')->name('checkout');
+Route::get('/payment','CheckoutController@payment')->name('payment');
 
 Route::get('empty',function(){
 	Cart::instance('saveforlater')->destroy();

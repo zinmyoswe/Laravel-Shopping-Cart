@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use Illuminate\Http\Request;
-use DB;
 
-class HomeController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +13,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products =Product::latest()->paginate(8);
-        $products_sa = DB::table('products')->orderBy('id','DESC')->paginate(4);
-        $best_seller2 = DB::table('products')->orderBy('id','ASC')->paginate(4);
-
-        return view('home')->with([
-            'products' => $products,
-            'products_sa' => $products_sa,
-            'best_seller2' => $best_seller2,
-
-        ]);
+        return view('checkout');
     }
- 
+
+     public function payment()
+    {
+        return view('payment');
+    }
+
 
     /**
      * Show the form for creating a new resource.
