@@ -12,5 +12,6 @@ home\Shop
 
 
 
-
+<br><br>
+@include('layouts.footer');
 @endsection

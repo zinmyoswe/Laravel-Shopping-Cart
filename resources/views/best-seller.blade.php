@@ -78,7 +78,7 @@ background: #000;
                                     @foreach($best_seller2 as $product)
                                     <div class="col-sm-3 col-xs-6">
                                         <a href="">
-                                           <img src="{{asset('img/addiasbag.png')}}" alt="Image" style="width: 250px; height:250px;" class="img-responsive">
+                                           <img src="{{asset('img/swiftrunshoe.PNG')}}" alt="Image" style="width: 250px; height:250px;" class="img-responsive">
                                         </a>
                                          <p>{{$product->name}}</p>
                                         <p><strong>$ {{$product->price}}</strong></p>

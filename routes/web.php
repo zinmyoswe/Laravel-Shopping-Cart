@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/','HomeController@index')->name('home');
+
+Route::get('/','PageController@index')->name('page');
 
 Route::get('/shop','ShopController@index')->name('shop.index');
 Route::get('/shop/{product}','ShopController@show')->name('shop.show');
@@ -29,4 +30,13 @@ Route::get('/payment','CheckoutController@payment')->name('payment');
 
 Route::get('empty',function(){
 	Cart::instance('saveforlater')->destroy();
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->group(function(){
+	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+	Route::get('/', 'AdminController@index')->name('admin.dashboard');
 });
