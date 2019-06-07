@@ -9,8 +9,9 @@
 
  /*text-transform: uppercase;*/
 </style>
+<br>
 <div class="container">
-home\Cart
+
 <div class="row">
    <div class="col-lg-9 col-sm-6 col-xs-12">
 
@@ -41,7 +42,7 @@ home\Cart
 		@foreach(Cart::content() as $item)
 		<div class="container cart_item">
 			<div class="row">
-				<div class="col-lg-2"><img src="{{asset('img/addiasbag.png')}}" class="img_cartpage"></div>
+				<div class="col-lg-2"><img src="{{asset('/img/'.$item->model->photo)}}" class="img_cartpage"></div>
 				<div class="col-lg-5" ><a href="{{route('shop.show', $item->model->slug)}}" class="cart_a"> {{$item->model->name}}</a>
 				<p class="cart_p">Color: Black <br>
 			       Size: 9.5   <b style="margin-left: 7px;">In Stock</b> <i class="far fa fa-check"></i></p>
@@ -156,7 +157,7 @@ home\Cart
 
 	<div class="container cart_item">
 			<div class="row">
-				<div class="col-lg-2"><img src="{{asset('img/addiasbag.png')}}" class="img_cartpage"></div>
+				<div class="col-lg-2"><img src="{{asset('/img/'.$item->model->photo)}}" class="img_cartpage"></div>
 				<div class="col-lg-5" ><a href="{{route('shop.show', $item->model->slug)}}">{{$item->model->name}}</a>
 				<p class="cart_p">Color: Black <br>
 			       Size: 9.5   <b style="margin-left: 7px;">In Stock</b> <i class="far fa fa-check"></i></p>
@@ -222,5 +223,5 @@ Within 30 days<br>
 </div>
 <br><br>
 @include('layouts.footer');
-<img src="https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/731fd7e9803144aa8299a88100de99f3_9366/adidas_NMD_Backpack_Small_Black_DH3087_01_standard.jpg">
+{{-- <img src="https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/731fd7e9803144aa8299a88100de99f3_9366/adidas_NMD_Backpack_Small_Black_DH3087_01_standard.jpg"> --}}
 @endsection
