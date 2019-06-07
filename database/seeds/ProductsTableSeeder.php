@@ -24,6 +24,7 @@ class ProductsTableSeeder extends Seeder
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         'category_id' => 1,
+        'photo' => 'nmdshoe1.png',
 
         ]);
 
@@ -39,6 +40,7 @@ class ProductsTableSeeder extends Seeder
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         'category_id' => 1,
+        'photo' => 'swiftrunshoe.png',
 
         ]);
 
@@ -54,6 +56,7 @@ class ProductsTableSeeder extends Seeder
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         'category_id' => 2,
+        'photo' => 'addiasbag.png',
 
         ]);
         Product::create([
@@ -68,6 +71,7 @@ class ProductsTableSeeder extends Seeder
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         'category_id' => 2,
+        'photo' => 'backpack.png',
 
         ]);
         Product::create([
@@ -82,6 +86,7 @@ class ProductsTableSeeder extends Seeder
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         'category_id' => 3,
+        'photo' => 'hoodie.png',
 
         ]);
         Product::create([
@@ -96,6 +101,7 @@ class ProductsTableSeeder extends Seeder
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         'category_id' => 3,
+        'photo' => 'three.png',
 
         ]);
     }

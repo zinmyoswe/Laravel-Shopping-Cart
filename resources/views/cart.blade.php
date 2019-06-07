@@ -222,5 +222,5 @@ Within 30 days<br>
 </div>
 <br><br>
 @include('layouts.footer');
-{{-- <img src="https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/396c603972dd4882acaba97401399dc8_9366/adidas_NMD_Gym_Sack_Black_DU6812_01_standard.jpg"> --}}
+<img src="https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/731fd7e9803144aa8299a88100de99f3_9366/adidas_NMD_Backpack_Small_Black_DH3087_01_standard.jpg">
 @endsection

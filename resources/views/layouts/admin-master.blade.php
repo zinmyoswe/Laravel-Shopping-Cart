@@ -8,7 +8,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+ 
+
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>AdminLTE 3 | Starter</title>
 
@@ -29,7 +31,7 @@ font-family: 'Abel', sans-serif;
 }
 </style>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" id="app">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
@@ -179,6 +181,9 @@ font-family: 'Abel', sans-serif;
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+             
+
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-dashboard"></i>
@@ -232,8 +237,25 @@ font-family: 'Abel', sans-serif;
     </div>
     <!-- /.sidebar -->
   </aside>
+  
+     <!-- Main content -->
+       <div class="content-wrapper">
+        <br><br>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
 
   @yield('content')
+  <router-view></router-view>
+  <vue-progress-bar></vue-progress-bar>
+
+     </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
    <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
