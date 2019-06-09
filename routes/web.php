@@ -28,8 +28,12 @@ Route::post('/saveforlater/switchtocart/{product}','SaveforlaterController@switc
 Route::get('/checkout','CheckoutController@index')->name('checkout');
 Route::post('/checkout','CheckoutController@store')->name('checkout.store');
 
+Route::get('/thankyou','ConfirmationController@index')->name('confirmation.index');
+
 
 Route::get('/payment','CheckoutController@payment')->name('payment');
+
+
 
 Route::get('empty',function(){
 	Cart::instance('saveforlater')->destroy();

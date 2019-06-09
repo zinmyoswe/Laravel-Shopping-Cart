@@ -2,14 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use Illuminate\Http\Request;
-use Gloudemans\Shoppingcart\Facades\Cart;
-use Cartalyst\Stripe\Laravel\Facades\Stripe;
-use Cartalyst\Stripe\Exception\CardErrorException;
-use RealRashid\SweetAlert\Facades\Alert;
 
-class CheckoutController extends Controller
+class ConfirmationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,17 +13,12 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        if(session()->has('success_message')) {
-             Alert::success('Thank you!', ' your payment has been successfully accepted!');
+        if(!session()->has('success_message')) {
+             return redirect('/');
         }
-        return view('checkout');
+        
+        return view('thankyou');
     }
-
-     public function payment()
-    {
-        return view('payment');
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -48,29 +38,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-            $charge = Stripe::charges()->create([
-                'amount' => Cart::total(),
-                'currency' => 'CAD',
-                'source' => $request->stripeToken,
-                'description' => 'Order',
-                'receipt_email' => $request->email,
-                'metadata' => [
-
-                ],
-            ]);
-
-            //successful
-            Cart::instance('default')->destroy();
-            // return back()->with('success_message','Thank you! your payment has been successfully accepted!');
-            return redirect()->route('confirmation.index')->with('success_message','Thank you! your payment has been successfully accepted!');
-            
-                
-               
-        }
-        catch(Exception $e){
-
-        }
+        //
     }
 
     /**

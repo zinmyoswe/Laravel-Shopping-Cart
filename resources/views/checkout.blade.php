@@ -77,6 +77,18 @@
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">SHIPPING ADDRESS</h4>
 
+
+
+      @if(count($errors) > 0)
+          <div class="alert alert-danger">
+            <ul>
+              @foreach($errors->all() as $error)
+                  <li>{{$error}}</li>
+              @endforeach
+            </ul>
+          </div>
+      @endif
+
       <form id="payment-form" action="{{route('checkout.store')}}" method="post">
         {{csrf_field()}}
         <div class="row">
