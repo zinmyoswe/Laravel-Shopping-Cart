@@ -89,6 +89,19 @@ h4{
     text-transform: uppercase;
     font-family: 'adiBlack',Arial,Helvetica,Verdana,sans-serif;
 }
+
+.caro3_3{
+  margin-right: 70px;
+  margin-left: 30px;
+}
+.caro3{
+  margin: 10px;
+
+}
+.caro3_img{
+  width: 470px;
+  
+}
     </style>
     <!-- Custom styles for this template -->
    
@@ -324,56 +337,66 @@ waves in clean monochrome colourways.</p>
   {{-- ======================= end of caro ==================== --}}
 
 
-
-  <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2>Heading</h2>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+  {{-- ======================= start of caro2 ==================== --}}
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+    
+        <img src="https://content.nike.com/content/dam/one-nike/en_lu/SU19/Mens/W_20190606_EMEA_RUN_MLP_P3A_PEG36/MLP_P3_desktop.png.transform/full-screen/MLP_P3_desktop.png" alt="" width="100%" height="100%" fill="#777">
+        <div class="container">
+          <div class="carousel-caption text-left" style="margin-bottom: 140px; color: #000;">
+            <h1 style="font-weight: bold;">DREAM FAST: THE NEW PEGASUS 36</h1>
+            <p>Our most runner-approved shoe goes a step further to help you achieve your goals.<br>
+Lace up some all new innovations for everyday speed.</p>
+            <p><a class="btn btn-lg btn-link" href="#" role="button" style="color: #000;">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+           
+          </div>
+        </div>
       </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
+
     </div>
+    <br><br>
+  {{-- ======================= end of caro2 ==================== --}}
 
-    <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+   <div class="caro3_3">
+    <div class="row">
+      <div class="col-lg-4 mb-3">
+         <div class="caro3">
+           <img src="https://c.static-nike.com/a/images/f_auto/w_1536,c_limit/ebni4cssccl4rvr0fgeb/homepage-apla-xa.jpg" class="caro3_img">
+           <div class="container">
+          <div class="carousel-caption">
+           
+            <p><a class="btn btn-lg btn-light" href="#" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">Men's </a></p>
+          </div>
+        </div>
+         </div>
       </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+       <div class="col-lg-4 mb-3">
+         <div class="caro3">
+           <img src="https://c.static-nike.com/a/images/f_auto/w_1536,c_limit/xkh1zz53gxufllifu6yd/homepage-apla-xa.jpg" class="caro3_img">
+             <div class="container">
+          <div class="carousel-caption">
+           
+            <p><a class="btn btn-lg btn-light" href="#" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">Women's </a></p>
+          </div>
+        </div>
+         </div>
       </div>
+
+       <div class="col-lg-4 mb-3">
+         <div class="caro3">
+           <img src="https://c.static-nike.com/a/images/f_auto/w_1536,c_limit/rl9h6expvyvrv6gwbzr2/homepage-apla-xa.jpg" class="caro3_img">
+             <div class="container">
+          <div class="carousel-caption">
+           
+            <p><a class="btn btn-lg btn-light" href="#" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">Kids' </a></p>
+          </div>
+        </div>
+         </div>
+      </div>
+
+    </div>
     </div>
     
     @include('best-seller');
