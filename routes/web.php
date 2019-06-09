@@ -26,6 +26,9 @@ Route::delete('/saveforlater/{product}','SaveforlaterController@destroy')->name(
 Route::post('/saveforlater/switchtocart/{product}','SaveforlaterController@switchtocart')->name('saveforlater.switchtocart');
 
 Route::get('/checkout','CheckoutController@index')->name('checkout');
+Route::post('/checkout','CheckoutController@store')->name('checkout.store');
+
+
 Route::get('/payment','CheckoutController@payment')->name('payment');
 
 Route::get('empty',function(){

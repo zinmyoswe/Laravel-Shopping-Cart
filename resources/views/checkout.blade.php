@@ -16,6 +16,39 @@
           font-size: 3.5rem;
         }
       }
+
+      /**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  box-sizing: border-box;
+
+  height: 40px;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
     </style>
     <script src="https://js.stripe.com/v3/"></script>
     <!-- Custom styles for this template -->
@@ -43,15 +76,17 @@
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">SHIPPING ADDRESS</h4>
-      <form class="needs-validation" novalidate>
+
+      <form id="payment-form" action="{{route('checkout.store')}}" method="post">
+        {{csrf_field()}}
         <div class="row">
         
         </div>
 
         <div class="mb-3">
-          <label for="username">Username</label>
+          <label for="username">Name</label>
          
-            <input type="text" class="form-control" id="username" placeholder="Username" required>
+            <input type="text" name="name" class="form-control" id="username" placeholder="name" >
             <div class="invalid-feedback" style="width: 100%;">
               Your username is required.
             </div>
@@ -60,7 +95,7 @@
 
         <div class="mb-3">
           <label for="email">Email <span class="text-muted">(Optional)</span></label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <input type="email" name="email" class="form-control" id="email" >
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
@@ -68,47 +103,39 @@
 
         <div class="mb-3">
           <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+          <input type="text" name="address" class="form-control" id="address" placeholder="1234 Main St" >
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-        </div>
+      
 
         <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required>
-              <option value="">Choose...</option>
-              <option>United States</option>
-            </select>
+          
+          <div class="col-md-4 mb-3">
+            <label for="country">State</label>
+                <input type="text" name="province" class="form-control">
             <div class="invalid-feedback">
-              Please select a valid country.
+              Please select a valid state.
             </div>
           </div>
-          <div class="col-md-4 mb-3">
-            <label for="state">State</label>
-            <select class="custom-select d-block w-100" id="state" required>
-              <option value="">Choose...</option>
-              <option>California</option>
-            </select>
+          <div class="col-md-5 mb-3">
+            <label for="country">City</label>
+                <input type="text" name="city" class="form-control">
             <div class="invalid-feedback">
-              Please provide a valid state.
+              Please select a valid city.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required>
+            <input type="text" name="postalcode" class="form-control" id="zip" placeholder="" >
             <div class="invalid-feedback">
               Zip code required.
             </div>
           </div>
         </div>
-        <hr class="mb-4">
+  {{--       <hr class="mb-4">
         <div class="custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input" id="same-address">
           <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
@@ -116,7 +143,7 @@
         <div class="custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input" id="save-info">
           <label class="custom-control-label" for="save-info">Save this information for next time</label>
-        </div>
+        </div> --}}
         <hr class="mb-4">
 
         <h4 class="mb-3">Payment</h4>
@@ -136,17 +163,18 @@
           </div>
         </div> --}}
         <div class="row">
-          <div class="col-md-6 mb-3">
+          <div class="col-md-12 mb-3">
             <label for="cc-name">Name on card</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+            <input type="text" class="form-control" name="name_on_card" id="cc-name" placeholder="" >
             <small class="text-muted">Full name as displayed on card</small>
             <div class="invalid-feedback">
               Name on card is required
             </div>
+
           </div>
 
-         <div class="form-row">
-    <label for="card-element">
+      <div class="col-md-12">
+        <label for="card-element">
       Credit or debit card
     </label>
     <div id="card-element">
@@ -155,33 +183,11 @@
 
     <!-- Used to display form errors. -->
     <div id="card-errors" role="alert"></div>
-  </div>
-         {{--  <div class="col-md-6 mb-3">
-            <label for="cc-number">Credit card number</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="" required>
-            <div class="invalid-feedback">
-              Credit card number is required
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="cc-expiration">Expiration</label>
-            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-            <div class="invalid-feedback">
-              Expiration date required
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="cc-cvv">CVV</label>
-            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-            <div class="invalid-feedback">
-              Security code required
-            </div>
-          </div> --}}
+      </div>
+        
         </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">checkout</button>
       </form>
     </div>
   </div>
@@ -195,17 +201,10 @@
     </ul>
   </footer>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-        <script src="{{asset('js/form-validation.js')}}"></script>
-
-
-@endsection
-
-@section('extra-js')
-	<script type="text/javascript">
-		// Create a Stripe client.
-var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+<script type="text/javascript">
+  (function(){
+        // Create a Stripe client.
+var stripe = Stripe('{{ config('services.stripe.key') }}');
 
 // Create an instance of Elements.
 var elements = stripe.elements();
@@ -229,7 +228,10 @@ var style = {
 };
 
 // Create an instance of the card Element.
-var card = elements.create('card', {style: style});
+var card = elements.create('card', {
+  style: style,
+  hidePostalCode: true
+});
 
 // Add an instance of the card Element into the `card-element` <div>.
 card.mount('#card-element');
@@ -248,6 +250,8 @@ card.addEventListener('change', function(event) {
 var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
+
+
 
   stripe.createToken(card).then(function(result) {
     if (result.error) {
@@ -274,5 +278,14 @@ function stripeTokenHandler(token) {
   // Submit the form
   form.submit();
 }
-	</script>
+  })();
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+        {{-- <script src="{{asset('js/form-validation.js')}}"></script> --}}
+
+
 @endsection
+
+
