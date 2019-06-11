@@ -64,15 +64,60 @@
 	<hr>
   <div class="row">
     <div class="col-md-4 order-md-2 mb-4">
-      @foreach(Cart::content() as $item)
-			<img src="{{asset('img/addiasbag.png')}}" class="img_cartpage">
-				<a href="{{route('shop.show', $item->model->slug)}}" class="cart_a"> {{$item->model->name}}</a>
-				<p>$ {{$item->model->price}}</p>
-      @endforeach
-      <hr>
-      <p>Subtotal : {{Cart::subtotal()}}</p>
-	<p>Tax(13%) : {{Cart::tax()}}</p>
-	<p><b>Total: {{Cart::total()}} </b></p>
+      <div class="cart_sidebar">
+        <br>
+        <button type="button" class="btn btn-dark btn-lg btn-block" style=" margin-right: :4px;">Checkout <i class="fa fa-arrow-right" style="margin-left: 35px;"></i></button>
+        <p class="text-center" style="padding: 7px;">By placing your order, you agree to <br>the Delivery Terms</p>
+        <h4 style="font-weight: 600; font-size: 22px; margin-left: 9px;">ORDER SUMMARY:</h4>
+        <div class="cart-calculator">
+          <table class="table">
+          <tr>
+            <td>{{Cart::count()}} PRODUCTS</td>
+            <td></td>
+          </tr>   
+          <tr>
+            <td>Product total</td>
+            <td>${{Cart::subtotal()}}</td>
+                        
+          </tr>
+          <tr>
+            <td>Tax(13%)</td>
+            <td>${{Cart::tax()}}</td>
+          </tr>
+          <tr>
+            <td>Delivery</td>
+            <td>FREE</td>
+          </tr>
+          <tr style="font-weight: bold">
+            <td>Total</td>
+            <td>${{Cart::total()}}</td>
+          </tr>
+          </table>
+        </div>
+      </div>
+      <br>
+      <div class="cart_needhelp">
+      <h4>NEED HELP?</h4>
+      <p><a href="" style="color: #000;">Shipping</a></p>
+      <p><a href="" style="color: #000;">Returns & Exchanges</a></p>
+      <p><a href="" style="color: #000;">Contact Us</a></p>
+      </div>
+        <div class="cart_sidebar2">
+    <h4>ACCEPTED PAYMENT METHODS</h4>
+    <img src="https://www.adidas.com/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw88ec105e/us_payment_methods.png" width="300px">
+
+    <p> <div class="cart-fontstyle">FREE SHIPPING, NO MINIMUM.
+</div>
+<a href="" style="color: #000;">Learn More</a></p>
+
+<p> <div class="cart-fontstyle">SECURE CHECKOUT</div>
+Pay safely with SSL technology.</p>
+
+<p> <div class="cart-fontstyle">FREE RETURNS*
+</div>
+Within 30 days<br>
+<a href="" style="color: #000;">read more</a></p>
+    </div>
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">SHIPPING ADDRESS</h4>
@@ -199,7 +244,7 @@
         
         </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">checkout</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" id="complete-order">checkout</button>
       </form>
     </div>
   </div>
@@ -263,9 +308,27 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
+  //Order complete
+  document.getElementById('complete-order').disabled = true;
+
+  var sourceData = {
+    owner: {
+      name: document.querySelector('input[name="name_on_card"]').value,
+      email: document.querySelector('input[name="email"]').value,
+      address_line1: document.querySelector('input[name="address"]').value,
+      address_city: document.querySelector('input[name="city"]').value,
+      address_state: document.querySelector('input[name="province"]').value,
+      address_zip: document.querySelector('input[name="postalcode"]').value,
+    },
+    mandate: {
+      // Automatically send a mandate notification email to your customer
+      // once the source is charged.
+      notification_method: 'email',
+    }
+  };
 
 
-  stripe.createToken(card).then(function(result) {
+  stripe.createToken(card, sourceData).then(function(result) {
     if (result.error) {
       // Inform the user if there was an error.
       var errorElement = document.getElementById('card-errors');

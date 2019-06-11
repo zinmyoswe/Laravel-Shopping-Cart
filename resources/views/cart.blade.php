@@ -68,7 +68,7 @@
 
 				</div>
 				<div class="col-lg-2">
-					<select name="" class="form-control" style="width: 70px; font-size:12px; font-weight: 700; border-radius: 1px;">
+					<select name=""  class="quantity" data-id="{{$item->rowId}}" style="width: 70px; font-size:12px; font-weight: 700; border-radius: 1px;">
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
@@ -223,5 +223,29 @@ Within 30 days<br>
 </div>
 <br><br>
 @include('layouts.footer');
+<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+<script type="text/javascript">
+	(function(){
+		const classname = document.querySelectorAll('.quantity')
+
+		Array.from(classname).forEach(function(element){
+			element.addEventListener('change',function(){
+				const id = element.getAttribute('data-id')
+				axios.post('/cart/${id}', {
+				    quantity: this.value
+				  
+				  })
+				  .then(function (response) {
+				    console.log(response);
+				    
+				  })
+				  .catch(function (error) {
+				    console.log(error);
+				  });
+			})
+		})
+	})();
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 {{-- <img src="https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/731fd7e9803144aa8299a88100de99f3_9366/adidas_NMD_Backpack_Small_Black_DH3087_01_standard.jpg"> --}}
 @endsection

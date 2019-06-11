@@ -36,10 +36,12 @@ background: #000;
 </script>
 
 <div class="ftr2">
-  <h2 style="text-align: center;">Best Seller</h2>
-  <br>
+  
 <div class="container">
+
             <div class="blog">
+                <h2 style="font-size: 28px; text-align: center;">BEST SELLER</h2>
+  <br>
                 
                     <div id="blogCarousel" class="carousel slide" data-ride="carousel">
 

@@ -20,6 +20,9 @@ Route::get('/shop/{product}','ShopController@show')->name('shop.show');
 Route::get('/cart','CartController@index')->name('cart.index');
 Route::post('/cart','CartController@store')->name('cart.store');
 Route::delete('/cart/{product}','CartController@destroy')->name('cart.destroy');
+
+Route::post('/cart/{product}','CartController@update')->name('cart.update');
+
 Route::post('/cart/switchsaveforlater/{product}','CartController@switchsaveforlater')->name('cart.switchsaveforlater');
 
 Route::delete('/saveforlater/{product}','SaveforlaterController@destroy')->name('saveforlater.destroy');
