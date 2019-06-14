@@ -45,6 +45,8 @@ h2{
 }
 
 
+
+
 /*------------------ Cart Sidebar ------------------------*/
 .cart_sidebar{
 	height: 460px;
@@ -66,6 +68,21 @@ h2{
 }
 .cart-fontstyle{
 	font-weight: bold;
+}
+
+.coupon_fr{
+	background: #f8f9fa;
+	width: 300px;
+	height: 80px;
+	padding: 2px;
+}
+.coupon_in{
+	margin: 10px;
+	background-color: #fff;
+	height: 50px;
+	width: 280px;
+	
+
 }
 
 /*------------------ Detail page ------------------------*/

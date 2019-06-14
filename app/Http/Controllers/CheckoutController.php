@@ -18,9 +18,9 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        if(session()->has('success_message')) {
-             Alert::success('Thank you!', ' your payment has been successfully accepted!');
-        }
+        // if(session()->has('success_message')) {
+        //      Alert::success('Thank you!', ' your payment has been successfully accepted!');
+        // }
        
         return view('checkout');
     }

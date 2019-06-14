@@ -81,6 +81,10 @@
                         
           </tr>
           <tr>
+            <td>Discount ({{session()->get('coupon')['name']}}) : Remove</td>
+            <td></td>
+          </tr>
+          <tr>
             <td>Tax(13%)</td>
             <td>${{Cart::tax()}}</td>
           </tr>
@@ -96,6 +100,39 @@
         </div>
       </div>
       <br>
+
+        {{--  Coupon start --}}
+   <div class="coupon_fr" >
+
+    <div class="coupon_in">
+      <table class="table">
+        <tr>
+          <td>
+        <a class="btn btn-link" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" style="color: #000;"><b>PROMO CODE</b></a>
+          </td>
+          <td><a class="btn btn-link" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" style="color: #000;">
+            <i class="fa fa-chevron-down"></i> </a></td>
+        </tr>
+      </table>
+  
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        <form method="post" action="{{route('coupon.store')}}">
+          {{csrf_field()}}
+          <input type="text" name="coupon_code" class="form-control" placeholder="CODES ARE CASE-SENSITIVE">
+          <p style="font-size: 12px; color: grey;">Casing & hyphens need to be exact</p>
+          
+          <button type="submit" class="btn btn-dark btn-lg btn-block">Apply <i class="fa fa-arrow-right" style="margin-left: 35px;"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+  {{--  Coupon end --}}
       <div class="cart_needhelp">
       <h4>NEED HELP?</h4>
       <p><a href="" style="color: #000;">Shipping</a></p>

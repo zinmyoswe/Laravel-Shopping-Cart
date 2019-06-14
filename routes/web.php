@@ -36,6 +36,10 @@ Route::get('/thankyou','ConfirmationController@index')->name('confirmation.index
 
 Route::get('/payment','CheckoutController@payment')->name('payment');
 
+// ------------Coupon---------------
+Route::post('/coupon','CouponsController@store')->name('coupon.store');
+Route::delete('/coupon','CouponsController@destroy')->name('coupon.destroy');
+
 
 
 Route::get('empty',function(){
