@@ -17,16 +17,31 @@
 	.shop a{
 		color: #000;
 	}
+	ul li a{
+		list-style: none;
+		color: #000;
+	}
+
+	ul li{
+		list-style: none;
+	}
 </style>
 <div class="container">
-	home\Shop
+	home /Shop
 	<div class="row">
 		<div class="col-md-2">
-			Side bar
+			<h5>SHOP BY CATEGORY</h5>
+			<ul>
+			@foreach($categories as $category)
+				<li><a href="{{route('shop.index',['category'=>$category->slug])}}">{{$category->name}}</a></li>
+			@endforeach
+			</ul>
 		</div>
 		<div class="col-md-10">	
+			<h4 style="font-weight: bold">{{$categoryName}}</h4><br>
 			<div class="row">
-				@foreach($products as $product)
+
+				@forelse($products as $product)
 				<div class="col-lg-3">	
 					<div class="shop">
 
@@ -41,7 +56,10 @@
 
 	</div>
 				</div>
-				@endforeach
+				@empty
+				@include('notfound');
+					
+				@endforelse
 			</div>
 		
 

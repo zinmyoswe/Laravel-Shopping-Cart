@@ -10,6 +10,7 @@
  /*text-transform: uppercase;*/
 </style>
 <br>
+
 <div class="container">
 
 <div class="row">
@@ -237,6 +238,7 @@ Within 30 days<br>
 				  })
 				  .then(function (response) {
 				    console.log(response);
+
 				    
 				  })
 				  .catch(function (error) {

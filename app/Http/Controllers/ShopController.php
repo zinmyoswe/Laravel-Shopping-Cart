@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 use DB;
 
@@ -15,9 +16,25 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $products =Product::latest()->paginate(12);
+        if(request()->category){
+            
+            $products =Product::with('categories')->whereHas('categories', function($query){
+                $query->where('slug', request()->category);
+            })->get();
+            $categories = Category::all();
+            $categoryName = $categories->where('slug',request()->category)->first()->name;
+        }else{   
+            $products =Product::latest()->paginate(12);
+            $categories = Category::all();
+            $categoryName = 'Features';
+        }
+        
+        return view('shop')->with([
+            'products' => $products,
+            'categories' => $categories,
+            'categoryName' => $categoryName,
 
-        return view('shop')->with('products',$products);
+        ]);
     }
 
     /**
