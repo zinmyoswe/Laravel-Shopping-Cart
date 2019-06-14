@@ -7,58 +7,74 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Project DEMO
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+![image](https://user-images.githubusercontent.com/29988949/59157934-1e3c2200-8a68-11e9-813c-b526e0c37cad.png)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![image](https://user-images.githubusercontent.com/29988949/59157939-2c8a3e00-8a68-11e9-8955-fee7478eceed.png)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+![image](https://user-images.githubusercontent.com/29988949/59157988-a0c4e180-8a68-11e9-90d2-94e93f8d3563.png)
 
-## Learning Laravel
+![image](https://user-images.githubusercontent.com/29988949/59157995-bd611980-8a68-11e9-97c2-8d29cf6d8d25.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+![image](https://user-images.githubusercontent.com/29988949/59528513-55a93500-8e93-11e9-8e9f-23bd7067df21.png)
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+![image](https://user-images.githubusercontent.com/29988949/59475994-6316de80-8e03-11e9-8681-2b4a4a2ae136.png)
 
-## Laravel Sponsors
+`Home Page`
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+![image](https://user-images.githubusercontent.com/29988949/59158009-d8cc2480-8a68-11e9-99c9-6c5fb84548a3.png)
+`Image Slider Page`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
 
-## Contributing
+![image](https://user-images.githubusercontent.com/29988949/59528347-dfa4ce00-8e92-11e9-9c0d-3e985f01dfb2.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+`Shop Page`
 
-## Security Vulnerabilities
+![image](https://user-images.githubusercontent.com/29988949/59157878-69a20080-8a67-11e9-994d-918656a42473.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+`Shopping cart Page`
+
+![image](https://user-images.githubusercontent.com/29988949/59157884-83434800-8a67-11e9-81e4-844c1f014ebb.png)
+
+`Save For Later Page`
+
+![image](https://user-images.githubusercontent.com/29988949/59528704-cf412300-8e93-11e9-8de2-a36c62846302.png)
+`Checkout Page`
+
+![image](https://user-images.githubusercontent.com/29988949/59158044-47a97d80-8a69-11e9-8785-8e08c5ef560c.png)
+`Stripe Test`
+
+![image](https://user-images.githubusercontent.com/29988949/59528644-acaf0a00-8e93-11e9-9c4c-3ffcc9251485.png)
+`Product Category Shoes page`
+
+![image](https://user-images.githubusercontent.com/29988949/59475934-13d0ae00-8e03-11e9-8726-0a15bdbd6717.png)
+`Product Not found page`
+
+
+
+## Test Stripe Payment
+Card Number: `4242 4242 4242 4242`
+
+Expiration Date: 10/21 or whatever you like from the future of today’s date
+
+CVC: whatever you like
+
+Zipcode: whatever you like
+## Installation
+Run `Composer Install`
+
+Run `npm install`
+
+Run `php artisan migrate`
+
+Run `npm run watch`
+
+Run `php artisan db:seed`
+
+Run `php artisan key:generate`
+
+Run `php artisan serve`
 
 ## License
 
