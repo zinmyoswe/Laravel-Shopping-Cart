@@ -38,7 +38,13 @@
 			</ul>
 		</div>
 		<div class="col-md-10">	
-			<h4 style="font-weight: bold">{{$categoryName}}</h4><br>
+			<div class="row">
+				<div class="col-lg-9 mb-6"><h4 style="font-weight: bold">{{$categoryName}}</h4></div>
+				<div class="col-lg-3 mb-6"><b style="margin-left: 35px;">Price :</b> 
+					<a href="{{route('shop.index',['category'=>request()->category,'sort'=>'high_low'])}}" style="color: #000;">high - low</a> | 
+					<a href="{{route('shop.index',['category'=>request()->category,'sort'=>'low_high'])}}" style="color: #000;">low - high</a></div>
+			</div>
+			 <br>
 			<div class="row">
 
 				@forelse($products as $product)
@@ -62,7 +68,7 @@
 				@endforelse
 			</div>
 		
-
+			{{$products->appends(request()->input())->links()}}
 
 		</div>
 	</div>
