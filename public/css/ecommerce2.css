@@ -90,4 +90,8 @@ h2{
     border: 1px solid #dee2e6;
 }
 
+.active{
+	font-weight: bold;
+}
+
 

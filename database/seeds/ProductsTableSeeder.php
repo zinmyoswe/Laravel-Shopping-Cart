@@ -104,5 +104,50 @@ class ProductsTableSeeder extends Seeder
         'photo' => 'three.png',
 
         ]);
+          Product::create([
+            'name' => 'NMD_RACER PRIMEKNIT SHOES',
+            'slug' => 'nmd_racer primeknit shoes',
+            'details' => 'KNIT NMD SHOES WITH ENERGY-RETURNING CUSHIONING AND A KEY CHAIN CLIP',
+            'price' => 126,
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'category_id' => 1,
+        'photo' => 'nmd2.png',
+
+        ]);
+            Product::create([
+            'name' => 'SUPERSTAR FOUNDATION SHOES',
+            'slug' => 'superstar foundation shoes',
+            'details' => 'KNIT NMD SHOES WITH ENERGY-RETURNING CUSHIONING AND A KEY CHAIN CLIP',
+            'price' => 80,
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'category_id' => 1,
+        'photo' => 'superstar.png',
+
+        ]);
+              Product::create([
+            'name' => 'ULTRABOOST PARLEY SHOES',
+            'slug' => 'ultraboost parley shoes',
+            'details' => 'KNIT NMD SHOES WITH ENERGY-RETURNING CUSHIONING AND A KEY CHAIN CLIP',
+            'price' => 135,
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'category_id' => 1,
+        'photo' => 'ultra2.png',
+
+        ]);
     }
 }

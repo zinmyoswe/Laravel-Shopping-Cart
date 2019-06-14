@@ -28,16 +28,17 @@
 </style>
 <div class="container">
 	home /Shop
+	<br><br><br>
 	<div class="row">
-		<div class="col-md-2">
+		<div class="col-md-2 mb-6">
 			<h5>SHOP BY CATEGORY</h5>
 			<ul>
 			@foreach($categories as $category)
-				<li><a href="{{route('shop.index',['category'=>$category->slug])}}">{{$category->name}}</a></li>
+				<li class="{{ setActiveCategory($category->slug) }}"><a href="{{route('shop.index',['category'=>$category->slug])}}">{{$category->name}}</a></li>
 			@endforeach
 			</ul>
 		</div>
-		<div class="col-md-10">	
+		<div class="col-md-10 mb-6">	
 			<div class="row">
 				<div class="col-lg-9 mb-6"><h4 style="font-weight: bold">{{$categoryName}}</h4></div>
 				<div class="col-lg-3 mb-6"><b style="margin-left: 35px;">Price :</b> 
@@ -48,7 +49,7 @@
 			<div class="row">
 
 				@forelse($products as $product)
-				<div class="col-lg-3">	
+				<div class="col-lg-3 ">	
 					<div class="shop">
 
 					<img src="{{asset('/img/'.$product->photo)}}" class="shop_img">

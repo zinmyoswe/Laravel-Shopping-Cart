@@ -249,5 +249,5 @@ Within 30 days<br>
 	})();
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-{{-- <img src="https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/731fd7e9803144aa8299a88100de99f3_9366/adidas_NMD_Backpack_Small_Black_DH3087_01_standard.jpg"> --}}
+{{-- <img src="https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/11aa2ef9b0774b55a2bca8d600d9488f_9366/Ultraboost_Parley_Shoes_Blue_AC7836_01_standard.jpg"> --}}
 @endsection
